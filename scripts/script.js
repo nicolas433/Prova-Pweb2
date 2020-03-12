@@ -42,11 +42,15 @@ submitBtn.addEventListener("click", () => addBlock(e));
 submitBtn.type = "button";
 
 function cleanInput() {
-    /*
   for (let i = 0; i < creditInput.length; i++) {
-    creditInput[i].value = "";
+    if(parseFloat(creditInput[i].value) < 1000){
+        alert("Insira todos os digitos do cartão");
+        for (let i = 0; i < creditInput.length; i++) {
+            creditInput[i].value = "";
+        }
+        return 0;
+    };
   }
-*/
   let newCreditCard = document.createElement("div");
   newCreditCard.className = "item";
 
@@ -73,7 +77,7 @@ function cleanInput() {
   p.appendChild(br2);
 
   let small2 = document.createElement("small");
-  let vencimento = document.createTextNode("Vencimento");
+  let vencimento = document.createTextNode("Vencimento ");
   let span = document.createElement("span");
   let vencimento2 = document.createTextNode(`${data[6].value}/${data[7].value}`);
   span.appendChild(vencimento2);
